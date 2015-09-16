@@ -1,0 +1,25 @@
+{
+  "name": "ndjsonpoint",
+  "description": "Parse each line in a stream as separate JSON strings",
+  "version": "1.0.0",
+  "author": "Andreas Madsen <amwebdk@gmail.com>",
+  "scripts": {
+    "test": "tap test.js"
+  },
+  "main": "./nsjsonpoint.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AndreasMadsen/ndjson.git"
+  },
+  "keywords": [
+    "json",
+    "ndjson",
+    "ldjson",
+    "parse",
+    "newline"
+  ],
+  "devDependencies": {
+    "tap": "1.4.x"
+  },
+  "license": "MIT"
+}
