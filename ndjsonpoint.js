@@ -66,7 +66,7 @@ NdjsonPoint.prototype._transform = function (data, encoding, done) {
 
   // Update buffer, if any data exists
   if (offset < data.length) {
-    this._buffer = data.slice(index + 1);
+    this._buffer = data.slice(offset);
   } else {
     this._buffer = EMPTY_BUFFER;
   }

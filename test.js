@@ -77,3 +77,14 @@ test('multiply json objects in multiply chunk', function (t) {
   s.write('"b"}\n')
   s.end('{"c":"c"}');
 });
+
+test('json object spread over multiply chunk', function (t) {
+  const s = nsjson({ encoding: 'ascii' });
+  s.pipe(endpoint({ objectMode: true }, function (err, data) {
+    t.ifError(err);
+    t.deepEqual(data, [{a: 'a'}, {b: 'b'}, {c: 'c'}]);
+    t.end();
+  }));
+  s.write('{"a":"a"}\n{"b":');
+  s.end('"b"}\n{"c":"c"}\n');
+});
